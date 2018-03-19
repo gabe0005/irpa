@@ -86,21 +86,31 @@
 	from {opacity: 1;}
 	to {opacity: 0.3;}
 }
+@-webkit-keyframes bottom-in {
+	from {-webkit-transform: translateY(100%);}
+	to {-webkit-transform: translateY(0%);}
+}
 @keyframes bottom-in {
 	from {transform: translateY(100%);}
 	to {transform: translateY(0%);}
 }
-@-webkit-keyframes bottom-in {
-	from {-webkit-transform: translateY(100%);}
-	to {-webkit-transform: translateY(0%);}
+@-webkit-keyframes bottom-out {
+	from {-webkit-transform: translateY(0%);}
+	to {-webkit-transform: translateY(100%);}
 }
 @keyframes bottom-out {
 	from {transform: translateY(0%);}
 	to {transform: translateY(100%);}
 }
-@-webkit-keyframes bottom-out {
-	from {-webkit-transform: translateY(0%);}
-	to {-webkit-transform: translateY(100%);}
+@-webkit-keyframes check {
+	0 {-webkit-transform:scale(1);}
+	80% {-webkit-transform: scale(1.2);}
+	100% {-webkit-transform: scale(1);}
+}
+@keyframes check {
+	0 {transform:scale(1);}
+	80% {transform: scale(1.2);}
+    100% {transform: scale(1);}
 }
 
 /* Loader */

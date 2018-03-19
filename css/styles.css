@@ -1,6 +1,8 @@
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  background: #F7F7F7; }
+  background: #F7F7F7;
+  color: #262D31;
+  font-size: 14px; }
 
 a {
   color: #00BCE5; }
@@ -94,6 +96,9 @@ input:not([type="checkbox"]):not([type="radio"]) {
   width: 100%;
   margin: 0; }
 
+label {
+  cursor: pointer; }
+
 .breadcrumbs {
   font-size: 14px;
   color: #829097;
@@ -109,8 +114,9 @@ input:not([type="checkbox"]):not([type="radio"]) {
     font-size: 12px; }
   .breadcrumbs .current {
     color: #0085C1; }
-  .breadcrumbs .current:after {
-    display: none; }
+
+.breadcrumbs span:last-child:after {
+  display: none; }
 
 .main-sidebar {
   background-image: linear-gradient(48deg, #38565F 0%, #2A383E 100%);
@@ -212,7 +218,7 @@ input:not([type="checkbox"]):not([type="radio"]) {
   background: #FDFDFD;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 0 4px 0 rgba(0, 0, 0, 0.1);
   border-radius: 2px;
-  padding: 25px; }
+  padding: 25px 20px; }
   .card .title {
     margin-bottom: 20px; }
 
@@ -318,9 +324,10 @@ table {
 .page-content .title {
   margin-bottom: 10px; }
   .page-content .title i {
-    font-size: 1.5em;
+    font-size: 1.2em;
     vertical-align: middle;
-    margin-bottom: 2px; }
+    margin-right: 8px;
+    transform: translateY(-3px); }
   .page-content .title h3 {
     display: inline-block;
     margin-bottom: 0; }
@@ -329,18 +336,38 @@ table {
 
 .accordion {
   width: 100%;
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24); }
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+  margin: 0;
+  color: #455A64; }
   .accordion dd {
-    margin: 0; }
+    margin: 0;
+    padding: 10px; }
     .accordion dd label {
       padding: 10px 10px;
-      font-size: 14px; }
+      font-size: 14px;
+      cursor: pointer; }
 
 .panel-head {
   padding: 10px 20px;
   height: 60px;
   background-color: #F4F7F7;
   border-bottom: 1px solid #CDCDD2; }
+  .panel-head a .arrow-collapse {
+    display: block;
+    color: white;
+    font-size: 24px;
+    background-color: #829097;
+    border-radius: 50%;
+    margin-left: 8px;
+    transition: .2s all; }
+  .panel-head a .arrow-collapse:after {
+    content: 'keyboard_arrow_down';
+    font-family: 'Material icons';
+    display: block; }
+  .panel-head a.active .arrow-collapse {
+    background-color: #ACB6BA; }
+  .panel-head a.active .arrow-collapse:after {
+    content: 'keyboard_arrow_up'; }
 
 .checkbox input[type="checkbox"] {
   display: none; }
@@ -351,8 +378,9 @@ table {
   line-height: 18px;
   text-align: center;
   margin-right: 10px;
-  background-color: #A8C952;
-  border-radius: 50%; }
+  background-color: #CDCDD2;
+  border-radius: 50%;
+  transition: all .3s; }
 
 .checkbox input[type="checkbox"]:checked + .selector:after {
   content: 'check';
@@ -360,5 +388,78 @@ table {
   display: inline;
   font-size: 16px;
   color: white; }
+
+.checkbox input[type="checkbox"]:checked + .selector {
+  background-color: #A8C952;
+  animation: check .2s ease; }
+
+.checkbox:hover .selector {
+  background-color: #ACB6BA; }
+
+.check-status input[type="checkbox"] {
+  display: none; }
+
+.check-status .selector {
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  margin-right: 10px;
+  background-color: #CDCDD2;
+  border-radius: 50%;
+  transition: all .3s; }
+
+.check-status .selector:after {
+  font-family: 'Material icons';
+  display: inline;
+  font-size: 16px;
+  color: white; }
+
+.check-status input[type="checkbox"]:checked + .selector:after {
+  content: 'check'; }
+
+.check-status input[type="checkbox"]:checked + .selector {
+  background-color: #A8C952;
+  animation: check .2s ease; }
+
+.check-status.all .selector {
+  background-color: #A8C952; }
+
+.check-status.all .selector:after {
+  content: 'check'; }
+
+.check-status.some .selector {
+  background-color: #A8C952; }
+
+.check-status.some .selector:after {
+  content: 'remove'; }
+
+/* ============= NUEVA PRUEBA VACIA  ============= */
+.page-info {
+  height: 100%;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 14px; }
+  .page-info .separator {
+    width: 1px;
+    height: 100%;
+    background-color: #CDCDD2;
+    margin: 0 5px;
+    flex-shrink: 0; }
+  .page-info > div {
+    width: 50%; }
+  .page-info .none {
+    color: #0085C1; }
+
+.page-title {
+  padding-left: 20px;
+  font-size: 16px; }
+  .page-title h2, .page-title > div {
+    margin-bottom: 5px; }
+  .page-title a {
+    font-weight: 600;
+    color: #0085C1; }
+  .page-title span {
+    color: #455A64; }
 
 /*# sourceMappingURL=styles.css.map */

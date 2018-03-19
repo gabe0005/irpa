@@ -7,8 +7,8 @@
             <div class="grow">
                 <h1>Nueva prueba</h1>
                 <div class="breadcrumbs">
-                    <span>Definir reglas</span>
-                    <span class="current">Añadir preguntas</span>
+                    <span class="current">Definir reglas</span>
+                    <span>Añadir preguntas</span>
                 </div>
             </div>
             <div class="logo">
@@ -65,13 +65,16 @@
                     
                     <dl class="accordion">
                         <dt class="panel-head flex v-center between">
-                            <div>
-                                <div class="check-status"></div>
+                            <div class="flex v-center">
+                                <label class="check-status all"><!-- check-status es distinto al checkbox de abajo ya que tiene 3 estados: todos, algunos y ninguno checkqueado, alternen entre las clases "all", "none" y "some" para hacer el cambio de look -->
+                                    <input type="checkbox"/>
+                                    <div class="selector"></div>
+                                </label>
                                 <h4>Unidad 1</h4>
                             </div>
                             <a class="flex center">
                                 <span>(0/3)</span>
-                                <i class="material-icons">keyboard_arrow_down</i>
+                                <div class="arrow-collapse"></div>
                             </a>
                         </dt>
                         <dd>
@@ -86,14 +89,56 @@
                                 <span>Ítem 2</span>
                             </label>
                         </dd>
-                        <dt class="pane-head">
-                            <a href="">Panel 2</a>
+                        <dt class="panel-head flex v-center between">
+                            <div class="flex v-center">
+                                <label class="check-status none">
+                                    <input type="checkbox"/>
+                                    <div class="selector"></div>
+                                </label>
+                                <h4>Unidad 2</h4>
+                            </div>
+                            <a class="flex center">
+                                <span>(0/3)</span>
+                                <div class="arrow-collapse"></div>
+                            </a>
                         </dt>
                         <dd>
-                            Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+                            <label class="checkbox flex v-center">
+                                <input type="checkbox"/>
+                                <div class="selector"></div>
+                                <span>Ítem 1</span>
+                            </label>
+                            <label class="checkbox flex v-center">
+                                <input type="checkbox"/>
+                                <div class="selector"></div>
+                                <span>Ítem 2</span>
+                            </label>
                         </dd>
-                        <dt><a href="">Panel 3</a></dt>
-                        <dd>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</dd>
+                        <dt class="panel-head flex v-center between">
+                            <div class="flex v-center">
+                                <label class="check-status some">
+                                    <input type="checkbox"/>
+                                    <div class="selector"></div>
+                                </label>
+                                <h4>Unidad 3</h4>
+                            </div>
+                            <a class="flex center">
+                                <span>(0/3)</span>
+                                <div class="arrow-collapse"></div>
+                            </a>
+                        </dt>
+                        <dd>
+                            <label class="checkbox flex v-center">
+                                <input type="checkbox"/>
+                                <div class="selector"></div>
+                                <span>Ítem 1</span>
+                            </label>
+                            <label class="checkbox flex v-center">
+                                <input type="checkbox"/>
+                                <div class="selector"></div>
+                                <span>Ítem 2</span>
+                            </label>
+                        </dd>
                     </dl>
                 </div>
             </div>

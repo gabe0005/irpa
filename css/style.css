@@ -63,10 +63,12 @@
 .page-title {
     grid-column: 1/10;
     grid-row: 1/1;
+    align-self: end;
 }
 .page-info {
     grid-column: 10/end;
     grid-row: 1/1;
+    align-self: end;
 }
 .page-content {
     grid-column: 1/10;
