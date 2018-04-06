@@ -73,9 +73,14 @@
 .page-content {
     grid-column: 1/10;
     grid-row: 2/2;
+    align-self: flex-start;
 }
 .page-sidenav {
     grid-column: 10/end;
     grid-row: 2/2;
     align-self: flex-start;
+}
+.pregunta-body {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
 }

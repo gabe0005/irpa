@@ -43,12 +43,86 @@
                     </div>
                 </div>
             </div>
-            <div class="card page-content grid g9">
+            <div class="card tabbed page-content">
+                <div class="top-tabs flex between">
+                    <ul class="tabs flex">
+                        <li id="tab-check-desarrollo" class="tab">
+                            <a href="#tc-desarrollo" class="tab-info">
+                                <span class="place">1</span>
+                                <span>Desarrollo</span>
+                            </a>
+                        </li>
+                        <li id="tab-check-alternativa" class="tab">
+                            <a href="#tc-alternativa" class="tab-info">
+                                <span class="place">2</span>
+                                <span>Alternativa</span>
+                            </a>
+                        </li>
+                        <li id="tab-check-vf" class="tab">
+                            <a href="#tc-vf" class="tab-info">
+                                <span class="place">3</span>
+                                <span>Verdadero/Falso</span>
+                            </a>
+                        </li>
+                        <li id="tab-check-rc" class="tab">
+                            <a href="#tc-rc" class="tab-info">
+                                <span class="place">4</span>
+                                <span>Respuesta corta</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tour-container">
+                        <button id="add-type" class="btn">
+                            <i class="material-icons">add</i>
+                        </button>
+                        <div class="type-menu">
+                            <label id="check-desarrollo" class="checkbox">
+                                <input type="checkbox"/>
+                                <div class="selector"></div>
+                                <span>Desarrollo</span>
+                            </label>
+                            <label id="check-alternativa" class="checkbox">
+                                <input type="checkbox"/>
+                                <div class="selector"></div>
+                                <span>Alternativas</span>
+                            </label>
+                            <label id="check-vf" class="checkbox">
+                                <input type="checkbox"/>
+                                <div class="selector"></div>
+                                <span>Verdadero/Falso</span>
+                            </label>
+                            <label id="check-rc" class="checkbox">
+                                <input type="checkbox"/>
+                                <div class="selector"></div>
+                                <span>Respuesta corta</span>
+                            </label>
+                        </div>
+                        <div class="tour left active"><span>Comienza añadiendo una sección de preguntas</span></div>
+                    </div>
+                </div>
+
+                <div class="tab-container">
+                    <?php include('tabs/tab_desarrollo.php'); ?>
+                    <div class="tab-content" id="tc-alternativa">
+                       <!--Content-->alternativas
+                    </div>
+                    <div class="tab-content" id="tc-vf">
+                       <!--Content-->Verdadero / falso
+                    </div>
+                    <div class="tab-content" id="tc-rc">
+                       <!--Content-->Respuesta corta
+                    </div>
+                </div>
             </div>
-            <aside class="card page-sidenav flex center">
-                <div>
+            <aside class="card page-sidenav">
+                <div class="guardar-prueba">
                     <a class="btn flat disabled">Guardar</a>
+                    <p>Último guardado el 23 Dic 2017 ( 23:17)</p>
+                </div>
+                <div>
                     <a class="btn flat disabled">Vista previa</a>
+                </div>
+                <div>
                     <a class="btn disabled">Generar prueba</a>
                 </div>
             </aside>
