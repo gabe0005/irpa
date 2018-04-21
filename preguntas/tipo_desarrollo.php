@@ -17,7 +17,9 @@
                                         </div>
                                         <div class="imagen-pregunta">
                                             <img src="img/old-map-england.jpg"/>
-                                            <span>nombre-archivo.png</span>
+                                            <div>
+                                                <span>nombre-archivo.png</span>
+                                            </div>
                                         </div>
                                         <div class="size">
                                             <div class="tag">Grande</div>

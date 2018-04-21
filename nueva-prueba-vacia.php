@@ -102,15 +102,133 @@
                 </div>
 
                 <div class="tab-container">
-                    <?php include('tabs/tab_desarrollo.php'); ?>
-                    <div class="tab-content" id="tc-alternativa">
-                       <!--Content-->alternativas
+                    <div class="tab-content" id="tc-desarrollo">
+                        <header class="flex v-center between wrap">
+                            <div class="flex v-center botonera">
+                                <a class="btn flat">
+                                    <i class="material-icons">add</i><span>Pregunta</span>
+                                </a>
+                                <a class="btn flat">
+                                    <i class="material-icons">add</i><span>grupo</span>
+                                </a>
+                            </div>
+                        </header>
+                        <div class="preguntas vacio">
+                            <span>No hay preguntas</span>
+                        </div>
                     </div>
-                    <div class="tab-content" id="tc-vf">
-                       <!--Content-->Verdadero / falso
+                    <div class="tab-content" id="tc-alternativa">
+                        <header class="flex v-center between wrap">
+                            <div class="flex v-center botonera">
+                                <a class="btn flat">
+                                    <i class="material-icons">add</i><span>Pregunta</span>
+                                </a>
+                                <a class="btn flat">
+                                    <i class="material-icons">add</i><span>grupo</span>
+                                </a>
+                            </div>
+                            <div class="flex opciones">
+                                <div class="flex v-center">
+                                    <span>Número máximo de<br>alternativas en cada pregunta</span>
+                                    <div class="number">
+                                        <button class="btn-number res"><i class="material-icons">remove</i></button>
+                                        <input type="number" value="0">
+                                        <button class="btn-number sum"><i class="material-icons">add</i></button>
+                                    </div>
+                                </div>
+                                <div class="flex v-center">
+                                    <span>Ordenar<br>aleatoriamente</span>
+                                    <div class="switch">
+                                        <label>
+                                            <input type="checkbox">
+                                            <span class="lever">
+                                                <i class="material-icons">check</i>
+                                                <i class="material-icons">close</i>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+                        <div class="preguntas vacio">
+                            <span>No hay preguntas</span>
+                        </div>
                     </div>
                     <div class="tab-content" id="tc-rc">
-                       <!--Content-->Respuesta corta
+                        <header class="flex v-center between wrap">
+                            <div class="flex v-center botonera">
+                                <a class="btn flat">
+                                    <i class="material-icons">add</i><span>Pregunta</span>
+                                </a>
+                            </div>
+                            <div class="flex opciones">
+                                <div class="flex v-center">
+                                    <span>Ordenar<br>aleatoriamente</span>
+                                    <div class="switch">
+                                        <label>
+                                            <input type="checkbox">
+                                            <span class="lever">
+                                                <i class="material-icons">check</i>
+                                                <i class="material-icons">close</i>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+                        <div class="preguntas vacio">
+                            <span>No hay preguntas</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="tc-vf">
+                        <header class="flex v-center between wrap">
+                            <div class="flex v-center botonera">
+                                <a class="btn flat">
+                                    <i class="material-icons">add</i><span>Pregunta</span>
+                                </a>
+                                <a class="btn flat">
+                                    <i class="material-icons">add</i><span>grupo</span>
+                                </a>
+                            </div>
+                            <div class="flex opciones">
+                                <div id="justificar" class="flex v-center">
+                                    <span>Justificar<br>preguntas</span>
+                                    <div class="switch">
+                                        <label>
+                                            <input type="checkbox">
+                                            <span class="lever">
+                                                <i class="material-icons">check</i>
+                                                <i class="material-icons">close</i>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div id="nlineas" class="flex v-center disable">
+                                    <span>Número de líneas<br>para justificar</span>
+                                    <div class="number">
+                                        <button class="btn-number res" disabled><i class="material-icons">remove</i></button>
+                                        <input type="number" value="0" disabled>
+                                        <button class="btn-number sum" disabled><i class="material-icons">add</i></button>
+                                    </div>
+                                </div>
+                                <div class="flex v-center">
+                                    <span>Ordenar<br>aleatoriamente</span>
+                                    <div class="switch">
+                                        <label>
+                                            <input type="checkbox">
+                                            <span class="lever">
+                                                <i class="material-icons">check</i>
+                                                <i class="material-icons">close</i>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+                        <div class="preguntas vacio">
+                            <span>No hay preguntas</span>
+                        </div>
                     </div>
                 </div>
             </div>

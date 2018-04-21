@@ -3,7 +3,7 @@ $( document ).ready(function() {
     
 // ACORDEON
     
-  var allPanels = $('.accordion > dd').hide();
+  $('.accordion > dd').hide();
     
   $('.accordion > dt > a').click(function() {
       $this = $(this);
@@ -12,14 +12,14 @@ $( document ).ready(function() {
       $target.toggleClass('active').slideToggle();
   });
     
-  // ACORDEON PREGUNTAS
+// ACORDEON PREGUNTAS
       
-  var allPanels = $('.col-body:not(.active)').hide();
+  $('.col-body:not(.active)').hide();
     
   $('.collapse .col-indicator').click(function() {
       $this = $(this).parent().parent();
       $target =  $this.find('.col-body');
-      $this.toggleClass('active');
+      $this.toggleClass('active')
       $target.toggleClass('active').slideToggle();
   });  
     
@@ -27,10 +27,13 @@ $( document ).ready(function() {
 // TABS
     
     //When page loads...
-	$(".tab-content").hide(); //Hide all content
-	$("ul.tabs li:first-child").addClass("active"); //Activate first tab
-	$(".tab-content:first-child").show(); //Show first tab content
-
+    if(!$('.type-menu .checkbox input').is(':checked')){
+        $('.tabs .tab').hide();
+    }
+        $(".tab-content").hide(); //Hide all content
+        $("ul.tabs li:first-child").addClass("active"); //Activate first tab
+        $(".tab-content:first-child").show(); //Show first tab content
+    
 	//On Click Event
 	$("ul.tabs > .tab").click(function() {
 
@@ -47,19 +50,49 @@ $( document ).ready(function() {
         $('.type-menu').fadeToggle(200).toggleClass('active');
         $('.tour').fadeOut(200);
     });
-    $('.checkbox input').click(function(e){
+    $('.type-menu .checkbox input').click(function(e){
         $id = $(this).parent().attr('id');
-        $('#tab-'+$id).fadeToggle();
+        if ($(this).is(':checked')) {
+            $('#tab-'+$id).fadeIn(100);
+        } else {
+            $('#tab-'+$id).fadeOut(100);
+        }
     });
     
-});
+    
+    
+// INPUT NUMBER    
+       
+    $(".btn-number").on("click", function() {
+      var $button = $(this);
+      var oldValue = $button.parent().find("input").val();
 
-// Drag and drop
-function handleDragStart(e) {
-  ('.pregunta').style.opacity = '0.1';  // this / e.target is the source node.
-}
-
-var cols = document.querySelectorAll('.pregunta');
-[].forEach.call(cols, function(col) {
-  col.addEventListener('dragstart', handleDragStart, false);
+      if ($button.hasClass('sum')) {
+          var newVal = parseFloat(oldValue) + 1;
+        } else {
+       // Don't allow decrementing below zero
+        if (oldValue > 0) {
+          var newVal = parseFloat(oldValue) - 1;
+        } else {
+          newVal = 0;
+        }
+      }
+      $button.parent().find("input").val(newVal);
+    });
+    
+    
+    // Justificar preguntas
+    
+    $('#justificar input').click(function() {
+        if($(this).is(':checked')) {
+            $('#nlineas').removeClass('disable');
+            $("#nlineas input").prop('disabled', false);
+            $("#nlineas .btn-number").prop('disabled', false);
+        } else {
+            $('#nlineas').addClass('disable');
+            $("#nlineas input").prop('disabled', true).val('0');
+            $("#nlineas .btn-number").prop('disabled', true);
+        }
+    });
+    
 });
