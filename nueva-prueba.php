@@ -30,7 +30,7 @@
                         <strong>Puntaje total</strong>
                     </div>
                     <div class="flex center grow page-info-text">
-                        <span class="none"><i class="material-icons">remove</i></span>
+                        <span>250</span>
                     </div>
                 </div>
                 <div class="separator"></div>
@@ -39,7 +39,7 @@
                         <strong>Nº de preguntas</strong>
                     </div>
                     <div class="flex center grow page-info-text">
-                        <span class="none"><i class="material-icons">remove</i></span>
+                        <span>35</span>
                     </div>
                 </div>
             </div>
@@ -109,14 +109,27 @@
             </div>
             <aside class="card page-sidenav">
                 <div class="guardar-prueba">
-                    <a class="btn flat disabled">Guardar</a>
+                    <a class="btn flat">Guardar</a>
                     <p>Último guardado el 23 Dic 2017 ( 23:17)</p>
                 </div>
                 <div>
-                    <a class="btn flat disabled">Vista previa</a>
+                    <a class="btn flat">Vista previa</a>
                 </div>
                 <div>
-                    <a class="btn disabled">Generar prueba</a>
+                    <a class="btn">Generar prueba</a>
+                </div>
+                <div class="diagrama">
+                    <div class="grafico flex center"><!-- aquí debieran remplazar la imagen por el diagrama que ustedes generan -->
+                        <img src="img/diagrama.png" alt="diagrama"/>
+                    </div>
+                    <div class="leyenda">
+                        <div class="tag ama">Analizar</div>
+                        <div class="tag roj">Aplicar</div>
+                        <div class="tag pur">Entender</div>
+                        <div class="tag azu">Recordar</div>
+                        <div class="tag cel">Crear</div>
+                        <div class="tag ver">Evaluar</div>
+                    </div>
                 </div>
             </aside>
         </section>

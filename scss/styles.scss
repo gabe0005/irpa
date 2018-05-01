@@ -202,6 +202,35 @@ input::-webkit-inner-spin-button {
     }
 }
 
+.diagrama{
+    padding: 0 10px;
+    .grafico {padding: 0 20px; margin-bottom: 20px;}
+    .leyenda {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        font-size: $normal;
+        color: $texto;
+        .tag {text-align: left; display: flex; align-items: center;}
+        .tag:before {
+            display: block;
+            content: '';
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+            background-color: $grisbase;
+            border-radius: 50%;
+        }
+        .tag.ama:before {background-color: #F4BD3D;}
+        .tag.roj:before {background-color: #ED5730;}
+        .tag.pur:before {background-color: #C275FF;}
+        .tag.azu:before {background-color: #4F5AAC;}
+        .tag.cel:before {background-color: #00BCE5;}
+        .tag.ver:before {background-color: #B2D162;}
+    }
+}
+
+
 /* ============= HEADER ============= */
 
 .top-header {
@@ -292,7 +321,7 @@ table:not(.unstyled) {
     .guardar-prueba {
         p {margin: 0;}
     }
-    div {margin-bottom: 20px;}
+    > div {margin-bottom: 20px;}
 }
 .box-select{
     grid-column: 1/5;
@@ -373,6 +402,7 @@ table:not(.unstyled) {
     .separator {width: 1px; height: 100%; background-color: $grisborde; margin: 0 5px; flex-shrink: 0;}
     > div {width: 50%;}
     .none {color: $azul;}
+    .page-info-text {font-size: 26px; color: $azul; font-weight: 600;}
 }
 .page-title {
     padding-left: 20px;

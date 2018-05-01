@@ -226,6 +226,42 @@ input::-webkit-inner-spin-button {
   .main-sidebar ul a:hover {
     color: #23cdf3; }
 
+.diagrama {
+  padding: 0 10px; }
+  .diagrama .grafico {
+    padding: 0 20px;
+    margin-bottom: 20px; }
+  .diagrama .leyenda {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    font-size: 14px;
+    color: #262D31; }
+    .diagrama .leyenda .tag {
+      text-align: left;
+      display: flex;
+      align-items: center; }
+    .diagrama .leyenda .tag:before {
+      display: block;
+      content: '';
+      width: 15px;
+      height: 15px;
+      margin-right: 10px;
+      background-color: #829097;
+      border-radius: 50%; }
+    .diagrama .leyenda .tag.ama:before {
+      background-color: #F4BD3D; }
+    .diagrama .leyenda .tag.roj:before {
+      background-color: #ED5730; }
+    .diagrama .leyenda .tag.pur:before {
+      background-color: #C275FF; }
+    .diagrama .leyenda .tag.azu:before {
+      background-color: #4F5AAC; }
+    .diagrama .leyenda .tag.cel:before {
+      background-color: #00BCE5; }
+    .diagrama .leyenda .tag.ver:before {
+      background-color: #B2D162; }
+
 /* ============= HEADER ============= */
 .top-header {
   background: #FDFDFD;
@@ -351,7 +387,7 @@ table:not(.unstyled) {
     margin-bottom: 0; }
   .page-sidenav .guardar-prueba p {
     margin: 0; }
-  .page-sidenav div {
+  .page-sidenav > div {
     margin-bottom: 20px; }
 
 .box-select {
@@ -496,6 +532,10 @@ table:not(.unstyled) {
     width: 50%; }
   .page-info .none {
     color: #0085C1; }
+  .page-info .page-info-text {
+    font-size: 26px;
+    color: #0085C1;
+    font-weight: 600; }
 
 .page-title {
   padding-left: 20px;
