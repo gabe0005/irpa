@@ -59,6 +59,8 @@ h4 {font-size: $h4; margin: 0;}
     i {font-size: 1.5em;}
 }
 .btn:hover {background-color: $linkhover;box-shadow: 0 1px 4px 0 rgba(6, 53, 103, 0.6);}
+.btn.white {background-color: white; color: $azulosc;}
+.btn.white:hover {color: $link;}
 .btn.flat {
     background-color: transparent;
     color: $azulosc;
@@ -84,12 +86,11 @@ select {
     -webkit-appearance: none;
     border-radius: 0;
     padding: 10px;
-    background: #FDFDFD;
     border: 1px solid $grisborde;
     font-size: $normal;
     color: $azulosc;
     width: 100%;
-    background: url(../img/icon_arrow_down.svg) no-repeat;
+    background: url(../img/icon_arrow_down.svg) no-repeat  #FDFDFD;
     background-position: calc(100% - 10px) center;
     cursor: pointer;
 }
@@ -109,6 +110,7 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+textarea {width: 100%; max-width: 100%; min-height: 60px; background-color: white; border-color: $grisborde; padding: 10px; font-size: $normal; color: $texto; font-family: 'Source Sans Pro', sans-serif; margin: 0;}
 
 // Breadcrumbs //
 
@@ -714,3 +716,139 @@ table:not(.unstyled) {
     font-weight: 600;
     i {margin-right: 5px; color: $link;}
 }
+
+/* ============= MODALES ============= */
+
+.modal {display: none; position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; z-index: 9; background-color: rgba(69,90,100,0.7);}
+.modal > div {width: 100%; height: 100%;}
+.modal-container {width: 80%; min-width: 1000px; max-width: 1300px; background-color: whitesmoke; box-shadow: 0 5px 10px 0 rgba(0,0,0,0.30), 0 0 4px 0 rgba(0,0,0,0.10);}
+
+.modal-header {background-image: linear-gradient(50deg, #38565F 0%, #38555E 36%, #2A383E 100%); box-shadow: 0 0 4px 0 rgba(0,0,0,0.41); padding: 20px;
+    h2 {color: white;}
+}
+.modal-footer {
+    background-image: linear-gradient(10deg, #38565F 0%, #38555E 36%, #2A383E 100%);
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.41);
+    padding: 20px;
+    .btn {margin-right: 20px; min-width: 150px;}
+    .btn:last-child {margin: 0;}
+}
+.modal-body {position: relative; overflow: scroll; max-height: calc(90vh - 144px); min-height: 300px;}
+.modal-options {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(12, 1fr);
+    background-color: white;
+    .modal-sidebar {
+        grid-column: 1/4;
+        padding: 20px;
+        background-color: $grisblanco;
+        .option {
+            margin-bottom: 20px;
+            .title {
+                margin-bottom: 10px;
+                i {margin-right: 4px; font-size: 1.3em;}
+            }
+            h5 {font-weight: 500; font-size: $big; margin: 10px 0}
+        }
+    }
+    .modal-content {
+        padding: 20px;
+        grid-column: 4/end;
+        .title {margin-bottom: 10px;}
+    }
+}
+.modal-preview {display: none; position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; z-index: 1; background: #829097;}
+.btn-close-preview {background-color: $link; color: white; border-radius: 2px; position: absolute; z-index: 1; top: 10px; right: 10px;}
+.preview-test {background: #FFFFFF; border: 0 solid rgba(172,182,186,0.31); height: 600px; max-width: 70%; margin: 0 auto;}
+.enunciado {min-height: 150px; margin-bottom: 20px;}
+
+.lista-alternativas {padding-right: 40%;}
+.alt-row {
+    margin-bottom: 8px;
+    div:first-child {display: flex; justify-content: center; align-items: center; padding: 4px; background-color: #657177; color: white; font-weight: 600; width: 40px; font-size: $big; flex-shrink: 0;}
+    input[type="radio"] {display: none;}
+    label {margin: 0; width: 40px; font-size: $icon; background-color: $grisclaro; width: 40px; height: 100%; display: flex; align-items: center; justify-content: center; color: $grisbase; transition: .2s all; position: relative;}
+    label:after {position: absolute; background-color: $azulosc; color: white; padding: 8px; content: 'Marcar como respuesta correcta'; display: block; left: calc(100% + 4px); top: calc(50% - 24px); font-size: $small; border-radius: 4px; width: 120px; opacity: 0; transition: .3s opacity; pointer-events: none;}
+    label:hover:after {opacity: 1; transition-delay: .2s;}
+    label:hover {background-color: $grisborde;}
+    input[type="radio"]:checked + label {background-color: $verde; color: white;}
+    input[type="radio"]:checked + label:hover:after {opacity: 0; transition-delay: 0;}
+    textarea {margin: 0 4px; min-width: 100%;}
+}
+.img-enunciado {
+    > div {position: relative; margin-bottom: 4px;}
+    img {}
+    .btn-borrar {
+        display: none;
+        background: $error;
+        opacity: 0;
+        color: white;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.10); 
+        border-radius: 50px; font-size: $normal; 
+        position: absolute; 
+        left: 50%; 
+        bottom: 0px; 
+        z-index: 1; 
+        transform: translate(-50%, -50%); 
+        padding: 5px 15px;
+        transition: .2s all;
+    }
+    .txtimg-enunciado {font-size: $small; color: $grisbase;text-overflow: ellipsis; overflow: hidden;}
+}
+.img-enunciado:hover .btn-borrar {opacity: 1;}
+.submit-file {
+    input[type="file"] {display: none;}
+    label, .btn-borrar {
+        background: $grisblanco; 
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.10); 
+        border-radius: 50px; font-size: $normal; 
+        position: absolute; 
+        left: 50%; 
+        top: 50%; 
+        z-index: 1; 
+        transform: translate(-50%, -50%); 
+        padding: 5px 15px;
+        transition: .2s all;
+        i {color: $link;}
+    }
+    label:hover {background-color: white; color: $link;}
+}
+.img-tam {
+    .tam {
+        text-align: center;
+        input[type="radio"] {display: none;}
+        label {
+            width: 36px; 
+            height: 36px; 
+            border: 1px solid $grisborde;
+            background-color: white;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            border-radius: 8px;
+            i {margin: 0; font-size: 16px; color: $grisbase;}
+        }
+        input[type="radio"]:checked + label {border-color: $azul; border-width: 2px; i {color: $azul;}}
+        p {margin: 6px 0; font-size: $small;}
+        .med label i {font-size: 22px;}
+        .grande label i {font-size: 30px;}
+    }
+    .tams-default {margin-bottom: 15px;}
+    .otro {margin-right: 10px;}
+    .otro-tam {
+        label {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-gap: 4px;
+            justify-items: end; 
+            align-items: center;
+            margin-bottom: 8px;
+            span:first-child {grid-column: 1/4;}
+            input {padding: 4px; height: auto; grid-column: 4/8;}
+        }
+    }
+    .otro-tam.disable {opacity: .3;}
+}
+
+

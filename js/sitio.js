@@ -95,4 +95,75 @@ $( document ).ready(function() {
         }
     });
     
+    // Modal
+    
+	$('.modal-trigger').click(function(){
+		var href = $(this).attr('data-modal');
+		console.log(href);
+		$('#' + href).fadeIn();
+		$('#' + href).find('.modal-container').removeClass('bottom-out').addClass('bottom-in');
+	});
+	$('.modal-close').click(function(){
+		$('.modal').delay(150).fadeOut();
+		$('.modal-container').toggleClass('bottom-in bottom-out');
+	});
+    
+    // Preview prueba
+    
+    
+	$('.btn-editor').click(function(){
+        $(this).parent().parent().parent().find('.modal-preview').fadeToggle().toggleClass('bottom-in bottom-out');
+        $(this).text(function(i, text){
+          return text === "Vista previa" ? "Editor" : "Vista previa";
+      })
+	});
+    
+    
+    // Subir imagen al modal
+    
+    // cambio de texto
+    $('#btn-file').change(function(e){
+        var fileName = e.target.files[0].name;
+        $('.txtimg-enunciado').html(fileName);
+    });
+    
+    // cambio de imagen
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          $('#img-load').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+    $('#btn-file').change(function() {
+      readURL(this);
+        $('.submit-file label').hide();
+        $('#borrar-img').show().addClass('testing');
+    });
+    
+    // Limpiar
+    
+    $('#borrar-img').click(function(e){
+        $(this).hide();
+        $('#img-load').attr('src','img/img-bg-enunciado.png');
+        $('.txtimg-enunciado').html('Sin imagen adjunta');
+        $('.submit-file label').show();
+        $('#btn-file').val('');
+    });
+    
+    
+    // Habilitar tamaños de imagen
+    $('.inputsize').click(function() {
+        if($('#tam-otro').is(':checked')) {
+            $('#otro-tam').removeClass('disable');
+            $('#otro-tam').find('input').prop("disabled", false);
+        }
+        else {
+            $('#otro-tam').addClass('disable');
+            $('#otro-tam').find('input').prop("disabled", true);
+        }
+    });
+    
 });
