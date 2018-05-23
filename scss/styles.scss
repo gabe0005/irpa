@@ -39,8 +39,8 @@ a {color: $link;}
 
 h1 {font-size: $h1; margin: 0; margin-bottom: 10px; text-transform: uppercase; line-height: 1; font-weight: 600; letter-spacing: 2.77px;}
 h2 {font-size: $h2; margin: 0; text-transform: uppercase; letter-spacing: 1px}
-h3 {font-size: $h3; margin: 0;}
-h4 {font-size: $h4; margin: 0;}
+h3 {font-size: $h3; margin: 0; font-weight: 600;}
+h4 {font-size: $h4; margin: 0; font-weight: 600;}
 
 .btn i ~ span,.btn span ~ i,.btn.flat i ~ span, .btn.flat span ~ i {margin-left: 5px; margin-right: 5px;}
 .btn {
@@ -58,7 +58,24 @@ h4 {font-size: $h4; margin: 0;}
     text-align: center;
     i {font-size: 1.5em;}
 }
-.btn:hover {background-color: $linkhover;box-shadow: 0 1px 4px 0 rgba(6, 53, 103, 0.6);}
+.btn.blanco {
+    background: $grisblanco; 
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.10); 
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: $normal;
+    text-transform: none;
+    z-index: 1;
+    color: $texto;
+    padding: 5px 15px;
+    transition: .2s all;
+    i {color: $link;}
+}
+.btn:hover {background-color: $linkhover;box-shadow: 0 1px 4px 0 rgba(6, 53, 103, 0.6); box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3); }
+.btn.blanco:hover {
+    background-color: white;
+    i {color: $linkhover;}
+}
 .btn.white {background-color: white; color: $azulosc;}
 .btn.white:hover {color: $link;}
 .btn.flat {
@@ -624,7 +641,8 @@ table:not(.unstyled) {
     display: flex;
     margin: 0 15px;
     .btn-number {background: $link; color: white; font-size: 24px; line-height: 0; border: 0; margin: 0; padding: 3px;}
-    .btn-number:disabled {cursor: default;}
+    .btn-number:hover {background-color: $linkhover;}
+    .btn-number:disabled,.btn-number:hover:disabled {cursor: default;}
     input:not([type="checkbox"]):not([type="radio"]) {width: 42px; text-align: center; font-size: $normal; font-weight: 500; padding: 0;}
 }
 
@@ -733,15 +751,18 @@ table:not(.unstyled) {
     .btn {margin-right: 20px; min-width: 150px;}
     .btn:last-child {margin: 0;}
 }
-.modal-body {position: relative; overflow: scroll; max-height: calc(90vh - 144px); min-height: 300px;}
+.modal-body {position: relative; overflow: hidden; height: calc(70vh - 144px); min-height: 300px;}
 .modal-options {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(12, 1fr);
     background-color: white;
+    height: 100%;
+    overflow: scroll;
     .modal-sidebar {
         grid-column: 1/4;
         padding: 20px;
+        padding-top: 40px;
         background-color: $grisblanco;
         .option {
             margin-bottom: 20px;
@@ -751,9 +772,20 @@ table:not(.unstyled) {
             }
             h5 {font-weight: 500; font-size: $big; margin: 10px 0}
         }
+        .oa-detalle {
+            display: none;
+            border-left: 8px solid $grisclaro;
+            margin-top: 10px;
+            padding: 10px;
+            padding-right: 0;
+            h5 {margin-top: 0;}
+            select {margin-bottom: 15px;}
+            select:last-child {margin-bottom: 0;}
+        }
     }
     .modal-content {
         padding: 20px;
+        padding-top: 40px;
         grid-column: 4/end;
         .title {margin-bottom: 10px;}
     }
@@ -850,5 +882,133 @@ table:not(.unstyled) {
     }
     .otro-tam.disable {opacity: .3;}
 }
+
+/* Modal desarrollo */
+
+.detalle {margin-bottom: 20px;}
+.lista-items-desarrollo {
+    margin-bottom: 10px;
+    display: grid;
+    grid-gap: 10px;
+    .item {
+        display: flex;
+        background-color: $grisblanco;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.19), 0 0 4px 0 rgba(0,0,0,0.07);
+        .num {width: 28px; height: auto; display: flex; align-items: center; justify-content: center; margin: 0; border-radius: 0; color: white; background-color: $grisbase; font-size:$normal;}
+        .grid {grid-template-columns: 1fr 1fr auto; width: auto; grid-template-rows: 40px; padding: 8px; flex-grow: 1; grid-gap: 8px;}
+        input {grid-column: 1/2; grid-row: 1/2;}
+        select {grid-column: 1/2; grid-row: 2/end;}
+        textarea {grid-column: 2/3; grid-row: 1/end;}
+        .ptje {
+            text-align: center;
+            grid-column: 3/4; grid-row: 1/end;
+            .number {
+                margin: 0;
+                margin-bottom: 5px;
+            }
+            .number.big {
+                display: grid;
+                grid-template-columns: 44px;
+                grid-template-rows: 24px;
+                grid-gap: 2px;
+                input[type="number"] {grid-column: 1/1; grid-row: 1/end; width: auto;}
+                .btn-number {width: auto; height: auto; padding: 0; border-radius: 2px;}
+                .res {grid-column: 2/end; grid-row: 2/end;}
+                .sum {grid-column: 2/end; grid-row: 1/2;}
+            }
+        }
+        .remove {
+            grid-column: 4/end; grid-row: 1/end;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            button {
+                background-color: transparent; 
+                color: $gris; 
+                font-size: 36px;
+                line-height: 0;
+                opacity: .5;
+            }
+            button:hover {color: $error; opacity: 1;}
+        }
+    }
+}
+.no-item {width: 100%; background-color: $grisclaro; border-radius: 2px; display: flex; justify-content: center; padding: 15px;}
+
+
+/* Modal Verdadero falso */
+
+.detalle-vf {
+    width: 100%;
+    border: 1px solid #EBEBEB;
+    padding: 15px;
+    padding-top: 30px;
+    .switch {
+        text-align: center;
+        i {font-style: normal; font-weight: 600;}
+        .txt {display: block; margin-top: 8px; font-weight: 600; color: $grisbase; font-size: $big;}
+        label {
+            .lever {background-color: $error; color: white;}
+        }
+    }
+}
+
+/* Modal Respuesta corta */
+
+.tabla-rc {
+    .header {
+        border-bottom: 1px solid $grisborde;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        span {font-size: $small; color: $grisosc;}
+    }
+    .info {
+        font-size: $normal;
+        color: $azulosc;
+        margin-bottom: 15px;
+        i {color: $link; margin-right: 4px; font-size: 1.5em;}
+        img {margin-right: 8px; width: 24px;}
+    }
+    table {
+        td {padding: 2px;}
+        border: 0;
+        border-collapse: separate;
+        margin: 0;
+    }
+    .rc-box {
+        background: rgba(212,212,217,0.31);
+        position: relative;
+        border: 1px solid #D4D4D9;
+        .switch {
+            position: absolute; top: 0; right: 0; z-index: 2;
+            .lever {margin: 0;}
+        }
+        .title {
+            padding-right:44px; padding-left: 6px; height: 20px; margin: 0; color: $grisosc; opacity:.75;
+            span {display: block; font-size: $small; line-height: 20px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; text-align: right;}
+        }
+        .textarea {
+            padding: 8px;
+            textarea {padding: 4px; height: 20px; max-height: 20px; border: 0; resize: none; outline: 1px solid rgba(0,0,0,.05);}
+            textarea:focus {outline-color: rgba(0,133,193,.5); outline-offset: 0;}
+        }
+    }
+    .rc-box.active {
+        background-color:rgba(0,188,229,.1);
+        .title {color: $link;}
+        .textarea textarea {color: $azul;}
+    }
+}
+.table-content {overflow-x: scroll; background-color: $grisblanco; border: 1px solid $grisclaro;}
+.switch.min {
+    label {
+        .lever {width: 38px; height: 20px; border-radius: 0;}
+        input[type=checkbox]:checked + .lever {background-color: $link;}
+        .lever:before,.lever:after {width: 16px; height: 16px; left: 10px; top: 2px; transform: translateX(-50%);}
+        input[type=checkbox]:checked + .lever:after,input[type=checkbox]:checked + .lever:before {left:calc(100% - 10px);}
+    }
+}
+input:not([type="checkbox"]):not([type="radio"]).nombre-grupo {width: 50%; min-width: 300px; margin-bottom: 20px;}
+
 
 

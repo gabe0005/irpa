@@ -62,7 +62,7 @@ $( document ).ready(function() {
     
     
 // INPUT NUMBER    
-       
+    
     $(".btn-number").on("click", function() {
       var $button = $(this);
       var oldValue = $button.parent().find("input").val();
@@ -166,4 +166,38 @@ $( document ).ready(function() {
         }
     });
     
+    // texto verdadero falso
+    
+    $('.detalle-vf .switch input').change(function(e){
+        if($(this).is(':checked')) {
+            $('.detalle-vf .switch .txt').html('Verdadero');
+        }
+        else {
+            $('.detalle-vf .switch .txt').html('Falso');
+        }
+    });
+    
+    // Opciones que aparecen luego de poner "otro" en objetivo de aprendizaje
+    
+    $('.select-oa').change(function(e){
+        if($(this).find(' option:selected').val() == "otro") {
+            $(this).next('div').slideDown();
+        }
+        else {
+            $(this).next('div').slideUp();
+        }
+    });
+    
+    // Opciones que aparecen luego de poner "otro" en objetivo de aprendizaje
+    
+    $('.rc-box .switch input').click(function() {
+        if($(this).is(':checked')) {
+            $('.rc-box').has(this).addClass('active');
+            $('.rc-box').has(this).find('.title span').html('Campo para el alumno');
+        }
+        else {
+            $('.rc-box').has(this).removeClass('active');
+            $('.rc-box').has(this).find('.title span').html('Campo para el profesor');
+        }
+    });
 });
