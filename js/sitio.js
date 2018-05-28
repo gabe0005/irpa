@@ -200,4 +200,30 @@ $( document ).ready(function() {
             $('.rc-box').has(this).find('.title span').html('Campo para el profesor');
         }
     });
+    
+    // Multiselect 
+    var container = $('.multiselect');
+    $('.multiselect-field').click(function() {
+        container.has(this).find('.options').fadeIn().removeClass('top-out').addClass('top-in active');
+    });
+    $('.multiselect .checkbox').click(function(e){
+        var n = $('.multiselect').find('input:checkbox:checked').length;
+        if(n == 1) {
+            container.has(this).find('.multiselect-field').html(n + ' seleccionado');
+        }
+        else if(n > 1) {
+            container.has(this).find('.multiselect-field').html(n + ' seleccionados');
+        }
+        else {
+            container.has(this).find('.multiselect-field').html('Seleccionar...');
+        }
+    });
+    $(document).mouseup(function (e) {
+        if (!container.is(e.target) // if the target of the click isn't the container...
+           && container.has(e.target).length === 0) // ... nor a descendant of the container
+           {
+             container.find('.options.active').fadeOut(200).removeClass('top-in active');
+          }
+    });
+    
 });

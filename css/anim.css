@@ -20,6 +20,8 @@
 .rotate-mask {animation: rotate-mask 3s ease-in-out infinite; overflow: hidden;}
 .bottom-in {animation: bottom-in .5s cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: forwards;}
 .bottom-out {animation: bottom-out .5s cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: forwards;}
+.top-in {animation: top-in .5s cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: forwards;}
+.top-out {animation: top-out .5s cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: forwards;}
 
 @-webkit-keyframes single-in {
 	from {transform: translateY(100%);}
@@ -101,6 +103,14 @@
 @keyframes bottom-out {
 	from {transform: translateY(0%);}
 	to {transform: translateY(100%);}
+}
+@keyframes top-in {
+	from {transform: translateY(-100%);}
+	to {transform: translateY(0%);}
+}
+@keyframes top-out {
+	from {transform: translateY(0%);}
+	to {transform: translateY(-10%);}
 }
 @-webkit-keyframes check {
 	0 {-webkit-transform:scale(1);}

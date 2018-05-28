@@ -68,8 +68,5 @@ html {-webkit-font-smoothing: antialiased;}
 .fixed-table {table-layout: fixed;}
 .big {font-size: 1.2em;}
 
-/*-- IE FIXES --
-
-.flex > span {display: inline-block;}
-.flex > div {-ms-flex-shrink: 1; flex-shrink: 1; max-width: 100%;}
-*/
+/* -- grillas -- */
+.grid-self-end {align-self: end;}
