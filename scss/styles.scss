@@ -7,7 +7,6 @@ $azul:#0085C1;
 $azulosc:#455A64;
 $link:#00BCE5;
 $linkhover:#23cdf3;
-$error:#B85562;
 $grisosc:#5B5B5B;
 $grisbase:#829097;
 $gris:#ACB6BA;
@@ -15,6 +14,8 @@ $grisborde:#CDCDD2;
 $grisclaro:#EBEBEB;
 $grisblanco:#FAFAFB;
 $verde:#A8C952;
+$error:#B85562;
+$warning:#F4AF3D;
 $texto:#262D31;
 
 // Tamaño de textos //
@@ -1017,6 +1018,16 @@ table:not(.unstyled) {
 input:not([type="checkbox"]):not([type="radio"]).nombre-grupo {width: 50%; min-width: 300px; margin-bottom: 20px;}
 
 
+/* Modal */
+
+.modal-base {
+    .modal-container {width: auto; min-width: 600px;}
+    .modal-body {height: auto; min-height: 100px; padding: 60px 40px 30px; position: relative;}
+    .close-modal {position: absolute; top: 10px; right: 10px; font-size: $icon;}
+    h4 {text-transform: uppercase; color: $error; font-weight: 600;}
+    p {margin-bottom: 40px;}
+}
+
 /* ============= PRUEBA GENERADA ============= */
 
 .page-content .card {
@@ -1065,17 +1076,17 @@ input:not([type="checkbox"]):not([type="radio"]).nombre-grupo {width: 50%; min-w
     padding-left: 8%;
     label {margin-bottom: 20px;}
 }
-.preview-list {
+.preview-list, .pdf-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     font-size: $small;
-    .preview {
+    .preview, .pdf {
         text-align: center;
         img {display: block; margin: 0 auto; margin-bottom: 4px;}
         span {display: block; font-weight: 700; text-transform: uppercase; color: $azul;}
     }
-    .preview.disabled {
+    .preview.disabled, .pdf.disabled {
         opacity: .3;
         cursor: default;
         img {filter: grayscale(1);}
@@ -1084,6 +1095,9 @@ input:not([type="checkbox"]):not([type="radio"]).nombre-grupo {width: 50%; min-w
 }
 .vista-previa {
     p {text-align: center; color: $gris; margin-bottom: 40px;}
+    .btn {background-color: $verde;}
+    .btn {box-shadow: 0 1px 4px 0 rgba(140, 163, 125, 0.44);}
+    .btn.disabled {background-color: $gris;}
 }
 .info-preguntas {
     hgroup {
@@ -1097,3 +1111,77 @@ input:not([type="checkbox"]):not([type="radio"]).nombre-grupo {width: 50%; min-w
     .total {border-top: 1px solid $grisborde; margin-top: 20px; margin-bottom: 20px; padding-top: 10px;}
 }
 
+/* ============= PRUEBA LISTA ============= */
+
+.respuestas {
+    background-color: $azulblanco;
+    padding: 20px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    .grid {margin-bottom: 30px;}
+    .box {
+        color: $azulosc;
+        width: 95px;
+        text-align: center;
+        opacity: .7;
+        img {width: 60px;}
+    }
+    .box:hover {opacity: 1;}
+    .import {border-right: 1px solid $grisborde;}
+    .status {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h4 {
+            color: $azul;
+            margin-bottom: 10px;
+            span {vertical-align: middle;}
+            i {color: #F4AF3D; vertical-align: middle;}
+        }
+        p {color: $grisbase; margin: 0; margin-bottom: 10px;}
+        ul {
+            font-size: $big;
+            margin: 0;
+            padding: 0;
+            li {margin-bottom: 8px;}
+            li span {vertical-align: middle;}
+            li:before {content: 'more_horiz'; font-family: 'Material Icons'; display: inline; vertical-align: middle; margin-right: 8px; color: $grisbase;}
+            li.check:before {color: $verde; content: 'check';}
+            li.warning:before {color: $warning; content: 'warning';}
+            li.error:before {color: $error; content: 'error';}
+        }
+    }
+    .box-warning {
+        background: #F5E9BB; border-radius: 10px; padding: 15px;
+        color: $azulosc;
+        margin: 0 15px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {font-size: 2em; margin-right: 10px; color: $warning;}
+        span {font-size: $small;}
+    }
+}
+.resultados {
+    text-align: center;
+    .box {
+        color: $azul;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        i {padding: 20px; border-radius: 50%; border: 1px solid $azul; font-size: 44px; background-color: $azulblanco; margin-bottom: 20px; box-shadow: inset 0px 0px 0px 2px white;}
+        h4 {width: 100%; text-align: center;}
+    }
+    .box:hover {
+        color: $link;
+        i {border-color: $link;}
+    }
+    .box.disabled, .box.disabled:hover {
+        color: $gris;
+        i {border-color: $gris; background-color: $grisblanco;}
+    }
+    p {margin-bottom: 40px;}
+}

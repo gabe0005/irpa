@@ -101,7 +101,7 @@
                             </div>
                         </div>
                         <div class="grid-self-end text-right">
-                            <a class="btn inline">Generar vista previa</a>
+                            <a data-modal="modal-advertencia" class="modal-trigger btn inline">Generar vista previa</a>
                         </div>
                     </div>
                 </div>
@@ -173,6 +173,6 @@
             </aside>
         </section>
     </div>
-    <?php include('modals/modal_grupo.php'); ?>
+    <?php include('modals/modal_advertencia.php'); ?>
 </body>
 </html>
