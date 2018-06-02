@@ -28,7 +28,7 @@ $( document ).ready(function() {
     
     //When page loads...
     if(!$('.type-menu .checkbox input').is(':checked')){
-        $('.tabs .tab').hide();
+        //$('.tabs .tab').hide();
     }
         $(".tab-content").hide(); //Hide all content
         $("ul.tabs li:first-child").addClass("active"); //Activate first tab
@@ -59,7 +59,20 @@ $( document ).ready(function() {
         }
     });
     
+// TAB RESPUESTA DE ALUMNOS    
     
+    $(".tab-alumnos-header li:first-child").addClass("active"); //Activate first tab
+    $(".tab-alumnos-body > .alumn-tab:first-child").addClass("active"); //Show first tab content
+    
+	$(".tab-alumnos-header > .tab").click(function() {
+
+		$(".tab-alumnos-header > .tab").removeClass("active"); //Remove any "active" class
+		$(this).addClass("active"); //Add "active" class to selected tab
+		$(".tab-alumnos-body > .alumn-tab").hide(); //Hide all tab content
+
+		var activeTab = $(this).attr('data-tab'); //Find the href attribute value to identify the active tab + content
+		$('#'+activeTab).fadeIn(); //Fade in the active ID content
+	});
     
 // INPUT NUMBER    
     

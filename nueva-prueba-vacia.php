@@ -46,25 +46,25 @@
             <div class="card tabbed page-content">
                 <div class="top-tabs flex between">
                     <ul class="tabs flex">
-                        <li id="tab-check-desarrollo" class="tab">
+                        <li id="tab-check-desarrollo" class="tab" style="display:none;">
                             <a href="#tc-desarrollo" class="tab-info">
                                 <span class="place">1</span>
                                 <span>Desarrollo</span>
                             </a>
                         </li>
-                        <li id="tab-check-alternativa" class="tab">
+                        <li id="tab-check-alternativa" class="tab" style="display:none;">
                             <a href="#tc-alternativa" class="tab-info">
                                 <span class="place">2</span>
                                 <span>Alternativa</span>
                             </a>
                         </li>
-                        <li id="tab-check-vf" class="tab">
+                        <li id="tab-check-vf" class="tab" style="display:none;">
                             <a href="#tc-vf" class="tab-info">
                                 <span class="place">3</span>
                                 <span>Verdadero/Falso</span>
                             </a>
                         </li>
-                        <li id="tab-check-rc" class="tab">
+                        <li id="tab-check-rc" class="tab" style="display:none;">
                             <a href="#tc-rc" class="tab-info">
                                 <span class="place">4</span>
                                 <span>Respuesta corta</span>

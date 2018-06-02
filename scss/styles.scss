@@ -110,6 +110,7 @@ select {
     font-size: $normal;
     color: $azulosc;
     width: 100%;
+    min-width: 150px;
     background: url(../img/icon_arrow_down.svg) no-repeat  #FDFDFD;
     background-position: calc(100% - 10px) center;
     cursor: pointer;
@@ -438,6 +439,7 @@ table:not(.unstyled) {
     span {color: $azulosc;}
 }
 .card.tabbed {padding: 0;}
+.tabbed-content {padding: 25px 20px;}
 .tab-container {padding: 10px; background-color: #fafafa;}
 .tabbed {
     .top-tabs {
@@ -450,8 +452,9 @@ table:not(.unstyled) {
             height: 100%;
             i {font-size: 24px;}
         }
+        .tabs {max-width: calc(100% - 60px); overflow: auto;}
     }
-    .tabs {background-color: $grisclaro; flex-grow: 1;max-width: calc(100% - 60px); overflow: auto;}
+    .tabs {background-color: $grisclaro; flex-grow: 1;}
     .tab-content {
         > header {
             padding: 15px 0 5px; 
@@ -526,6 +529,9 @@ table:not(.unstyled) {
 .tabs {
     padding: 0;
     .tab {
+        border-top: 4px solid transparent;
+        min-height: 60px;
+        min-width: 140px;
         .place {width: 28px; height: 28px; border: 1px solid $grisborde; display: flex; justify-content: center; align-items: center; border-radius:50%; margin-right: 10px; color: $azulosc; flex-shrink: 0;}
         span {
             color: $azul;
@@ -747,9 +753,13 @@ table:not(.unstyled) {
 .modal {display: none; position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; z-index: 9; background-color: rgba(69,90,100,0.7);}
 .modal > div {width: 100%; height: 100%;}
 .modal-container {width: 80%; min-width: 1000px; max-width: 1300px; background-color: whitesmoke; box-shadow: 0 5px 10px 0 rgba(0,0,0,0.30), 0 0 4px 0 rgba(0,0,0,0.10);}
-
+.modal.preview {
+    .modal-preview {display: block;}
+}
 .modal-header {background-image: linear-gradient(50deg, #38565F 0%, #38555E 36%, #2A383E 100%); box-shadow: 0 0 4px 0 rgba(0,0,0,0.41); padding: 20px;
     h2 {color: white;}
+    .icon {font-size: 24px; color: white;}
+    .icon:hover {color: $link;}
 }
 .modal-footer {
     background-image: linear-gradient(10deg, #38565F 0%, #38555E 36%, #2A383E 100%);
@@ -1030,7 +1040,7 @@ input:not([type="checkbox"]):not([type="radio"]).nombre-grupo {width: 50%; min-w
 
 /* ============= PRUEBA GENERADA ============= */
 
-.page-content .card {
+.page-content {
     h2 {
         text-transform: none;
         font-weight: 600;
@@ -1184,4 +1194,101 @@ input:not([type="checkbox"]):not([type="radio"]).nombre-grupo {width: 50%; min-w
         i {border-color: $gris; background-color: $grisblanco;}
     }
     p {margin-bottom: 40px;}
+}
+
+/* ============= RESPUESTAS DETALLE ============= */
+
+.curso {
+    display: grid;
+    grid-template-columns: 260px auto;
+    border-bottom: 1px solid $grisborde;
+    .header {height: 70px; padding: 10px 25px; text-transform: uppercase;}
+    .alumnos {
+        background: $gradazul;
+        color: white;
+        .header {display: flex; justify-content: center; align-items: center; border-bottom: 1px solid rgba(0,0,0,.2);}
+        h4 {opacity: .5;}
+    }
+    .tab-alumnos-header {
+        padding: 0;
+        li {
+            padding: 20px 10px;
+            cursor: pointer;
+            font-weight: 600;
+            position: relative;
+            transition: none;
+            p {margin: 0; margin-bottom: 2px;}
+            p:last-child {margin: 0;}
+            i {font-size: 24px; color: $warning;}
+        }
+        li.warning {display: grid; grid-gap: 10px; grid-auto-flow: column; grid-auto-columns: max-content; align-items: center;}
+        li > div {z-index: 2; position: relative;}
+        li:hover {background-color: rgba(0,0,0,.1);}
+        li.active {background-color: #455A64;}
+        li.active:after {content: ''; display: block; width: 20px; height: 20px; background-color: #455A64; transform: rotate(45deg); position: absolute; right: -6px; top: calc(50% - 10px); z-index: 1;}
+    }
+    .tab-alumnos-body {
+        .tab-container {padding: 0;}
+        .alumn-tab:not(.active) {display: none;}
+        .alumn-tab {
+            .tab.active,.tab-container {background-color: $azulblanco;}
+        }
+    }
+}
+.set-respuesta {
+    background-color: $grisclaro;
+    .header {background-color: $grisclaro;}
+    h4 {}
+    h5 {margin: 0; font-size: $normal; font-weight: 600; opacity: .5; text-transform: none;}
+    .lista-respuestas {
+        padding: 0;
+        li:nth-child(even) {background-color: white;}
+        .row-respuesta {
+            display: grid;
+            grid-gap: 20px;
+            padding: 10px 25px;
+            align-items: center;
+            font-weight: 600;
+            grid-template-columns: 48px 1fr auto;
+            min-height: 65px;
+            .num {margin: 0; width: 30px; height: 30px; font-size: 14px; color: $gris; background-color: transparent; cursor: default;}
+            .radio {justify-content: center;}
+            .radio input + .selector, .radio input:checked + .selector {background-color: $grisclaro;}
+            .radio input:checked ~ span {color: $azul;}
+            .radio input:checked + .selector:after {content: 'lens'; color: $azul; font-size: 14px;}
+            a {text-transform: uppercase;}
+        }
+    }
+}
+.row-pregunta-desarrollo {
+    display: grid;
+    grid-gap: 10px;
+    padding: 20px;
+    grid-template-columns: 70px;
+    grid-template-rows: auto;
+    .num {
+        grid-row: 1/1; grid-column: 1/2;
+        background: transparent;
+        border: 1px solid #829097;
+        color: #829097;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        cursor: default;
+    }
+    .top-pregunta {
+        grid-row: 1/1; grid-column: 2/end; display: flex; justify-content: space-between;
+        span {opacity: .7;}
+        a {text-transform: uppercase; font-weight: 600;}
+    }
+    .fila-rubrica {grid-column: 2/end; border-bottom: 1px solid $grisborde; padding-bottom: 10px; margin-bottom: 10px; display: grid; grid-gap: 10px; grid-auto-flow: column; justify-content: space-between;}
+    .fila-rubrica:last-child {border: 0; margin-bottom: 0;}
+    .rubrica {
+        h4 {margin-bottom: 10px;}
+        p {margin: 0;}
+    }
+    .puntaje-unico {
+        display: flex; align-items: center; justify-content: center;
+        input:not([type="checkbox"]):not([type="radio"]) {margin-right: 10px; width: 40px; text-align: center;}
+    }
 }
