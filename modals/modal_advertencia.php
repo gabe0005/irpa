@@ -1,6 +1,6 @@
 
     
-    <div id="modal-advertencia" class="modal modal-base">
+    <div id="modal-advertencia" class="modal modal-advertencia">
         <div class="flex center">
             <div class="modal-container">
                 <div class="modal-body flex center">
