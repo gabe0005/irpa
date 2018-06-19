@@ -31,9 +31,10 @@
                                             <table>
                                                 <thead>
                                                     <tr>
-                                                        <th>ítem</th>
-                                                        <th>objetivo de aprendizaje</th>
+                                                        <th>Indicador</th>
+                                                        <th>OA</th>
                                                         <th>Puntaje</th>
+                                                        <th>Descriptor</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -41,7 +42,7 @@
                                                         <td>Oral</td>
                                                         <td>
                                                             <div class="flex center">
-                                                               <i class="material-icons">poll</i> <span>Aplicar</span>
+                                                               <i class="material-icons roj">poll</i> <span>Aplicar</span>
                                                             </div>
                                                         </td>
                                                         <td>
@@ -49,12 +50,13 @@
                                                                <i class="material-icons">add</i> <span>5 pts.</span>
                                                             </div>
                                                         </td>
+                                                        <td><a class="tooltipped" data-tooltip="Frase descriptora con la cual se definirá el nivel de logro necesario para el puntaje">Ver</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Escrito</td>
                                                         <td>
                                                             <div class="flex center">
-                                                               <i class="material-icons">poll</i> <span>Aplicar</span>
+                                                               <i class="material-icons ama">poll</i> <span>Analizar</span>
                                                             </div>
                                                         </td>
                                                         <td>
@@ -62,12 +64,13 @@
                                                                <i class="material-icons">add</i> <span>5 pts.</span>
                                                             </div>
                                                         </td>
+                                                        <td><a class="tooltipped" data-tooltip="Frase 2">Ver</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Conclusión</td>
                                                         <td>
                                                             <div class="flex center">
-                                                               <i class="material-icons">poll</i> <span>Aplicar</span>
+                                                               <i class="material-icons azu">poll</i> <span>Recordar</span>
                                                             </div>
                                                         </td>
                                                         <td>
@@ -75,6 +78,7 @@
                                                                <i class="material-icons">add</i> <span>5 pts.</span>
                                                             </div>
                                                         </td>
+                                                        <td><a class="tooltipped" data-tooltip="Frase 3">Ver</a></td>
                                                     </tr>
                                                 </tbody>
                                             </table>

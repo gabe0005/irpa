@@ -100,9 +100,9 @@
                                 <div class="item">
                                     <div class="flex center num">1</div>
                                     <div class="grid">
-                                        <input type="text" placeholder="Rúbrica">
+                                        <input type="text" placeholder="Indicador">
                                         <select>
-                                            <option selected disabled>Seleccionar habilidad</option>
+                                            <option selected disabled>Seleccionar OA</option>
                                         </select>
                                         <textarea placeholder="Describe brevemente el nivel de logro que afecta el puntaje"></textarea>
                                         <div class="ptje">
@@ -114,16 +114,16 @@
                                             <span>Puntos</span>
                                         </div>
                                         <div class="remove">
-                                            <button><i class="material-icons">remove_circle</i></button>
+                                            <button class="tooltipped" data-tooltip="Remover fila"><i class="material-icons">remove_circle</i></button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="flex center num">1</div>
                                     <div class="grid">
-                                        <input type="text" placeholder="Rúbrica">
+                                        <input type="text" placeholder="Indicador">
                                         <select>
-                                            <option selected disabled>Seleccionar habilidad</option>
+                                            <option selected disabled>Seleccionar OA</option>
                                         </select>
                                         <textarea placeholder="Describe brevemente el nivel de logro que afecta el puntaje"></textarea>
                                         <div class="ptje">
@@ -135,7 +135,7 @@
                                             <span>Puntos</span>
                                         </div>
                                         <div class="remove">
-                                            <button><i class="material-icons">remove_circle</i></button>
+                                            <button class="tooltipped" data-tooltip="Remover fila"><i class="material-icons">remove_circle</i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -156,6 +156,10 @@
                         <a class="btn white modal-close">Cancelar</a>
                     </div>
                     <div class="flex v-center">
+                        <div class="modal-errors">
+                            <i class="material-icons">error_outline</i>
+                            <span>Existen errores en la pregunta</span>
+                        </div>
                         <a class="btn-editor btn white">Vista previa</a>
                         <a class="btn">Guardar</a>
                     </div>

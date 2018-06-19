@@ -22,7 +22,7 @@
                 <div>
                     <span>III Medio - Historia y Geografía - Autor: Guillermo Palma</span>
                 </div>
-                <a>2 unidades</a>
+                <a class="modal-trigger" data-modal="modal-unidades">2 unidades</a>
             </div>
             <div class="page-info flex stretch">
                 <div class="flex flex-column stretch">
@@ -116,7 +116,7 @@
                     <a class="btn flat">Vista previa</a>
                 </div>
                 <div>
-                    <a data-modal="modal-grupo" class="modal-trigger btn">Generar prueba</a>
+                    <a data-modal="modal-desarrollo" class="modal-trigger btn">Generar prueba</a>
                 </div>
                 <div class="diagrama">
                     <div class="grafico flex center"><!-- aquí debieran remplazar la imagen por el diagrama que ustedes generan -->
@@ -134,6 +134,7 @@
             </aside>
         </section>
     </div>
-    <?php include('modals/modal_grupo.php'); ?>
+    <?php include('modals/modal_desarrollo.php'); ?>
+    <?php include('modals/modal_unidades.php'); ?>
 </body>
 </html>

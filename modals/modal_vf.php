@@ -42,11 +42,11 @@
                                     <i class="material-icons">add</i>
                                     <h4>Puntaje</h4>
                                 </div>
-                                <select>
-                                    <option selected disabled>Seleccionar...</option>
-                                    <option>5</option>
-                                    <option>10</option>
-                                </select>
+                                <div class="number">
+                                    <button class="btn-number res"><i class="material-icons">remove</i></button>
+                                    <input type="number" value="0">
+                                    <button class="btn-number sum"><i class="material-icons">add</i></button>
+                                </div>
                             </div>
                             <div class="option">
                                 <div class="title flex v-center">

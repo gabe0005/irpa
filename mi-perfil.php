@@ -117,6 +117,5 @@
             </div>
         </section>
     </div>
-    <?php include('modals/modal_preview.php'); ?>
 </body>
 </html>
